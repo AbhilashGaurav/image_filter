@@ -6,3 +6,6 @@ class ImageForm(forms.ModelForm):
   model = Image
   fields = '__all__'
   labels = {'photo':''}
+
+class DocumentForm(forms.Form):
+    docfile = forms.FileField(label='Select a file')

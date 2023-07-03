@@ -1,0 +1,15 @@
+<!-- {% extends "myapp/home.html" %} -->
+{% load static %}
+{% block content %}
+      <form action="{% url 'cal' %}" method="post" enctype="multipart/form-data" class="dropzone">
+      {% csrf_token %}
+      {{ message }}
+      <p>{{ form.non_field_errors }}</p>
+      <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+      <p>
+            {{ form.docfile.errors }}
+            {{ form.docfile }}
+      </p>
+      <p><input type="submit" value="Upload and Download!"/></p>
+      </form>
+<!-- {% endblock content %} -->
